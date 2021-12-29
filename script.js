@@ -1,7 +1,6 @@
 const canvas = document.querySelector('.canvas')
 
 const populateCanvas = (rows, columns) => {
-
     // make rows for pixels to be in
     for (let i = 0; i < rows; i++) {
         let row = document.createElement('div');
@@ -20,8 +19,8 @@ const populateCanvas = (rows, columns) => {
     }
 }
 
-const colorPixel = (e) => {
-    e.target.setAttribute("style", "background-color : black");
+const colorPixel = (e, color="black") => {
+    e.target.setAttribute("style", `background-color : ${color}`);
 }
 
 populateCanvas(4,4);
