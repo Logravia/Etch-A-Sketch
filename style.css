@@ -1,0 +1,16 @@
+.canvas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    flex: center;
+}
+
+.pixel {
+    border-style: solid;    
+    width: 10rem;
+    height: 10rem;
+}
