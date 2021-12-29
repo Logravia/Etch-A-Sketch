@@ -1,17 +1,42 @@
+body {
+    background-color: #21233D;
+}
+
+main {
+    display: flex;
+}
+
+header {
+    color: #EEEACC;
+}
+
 .canvas {
+    background-color: #EEEACC;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 50%
+    width: fit-content;
 }
 
 .row {
     display: flex;
-    flex: center;
+    flex: 0 1 auto;
+    width: fit-content;
 }
 
 .pixel {
     border-style: solid;    
-    width: 10rem;
-    height: 10rem;
+    border-width: 1px;
+    width: 2rem;
+    height: 2rem;
 }
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 auto;
+}
+
+.controls button {
+    margin-bottom: 0.2rem;
+}
+

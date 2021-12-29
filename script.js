@@ -23,4 +23,4 @@ const colorPixel = (e, color="black") => {
     e.target.setAttribute("style", `background-color : ${color}`);
 }
 
-populateCanvas(4,4);
+populateCanvas(16,16);
