@@ -4,21 +4,39 @@ body {
 
 main {
     display: flex;
+    justify-content: center;
 }
 
-header {
+.title {
     color: #EEEACC;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif 
+    font-family: monospace;
 }
+
+.card h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 
 .canvas {
     background-color: #EEEACC;
     display: flex;
     flex-direction: column;
     width: fit-content;
+    align-self: flex-end;
+    margin-left: 1.5rem;
+
+    border-style: solid;
+    border-width: 2rem;
+    border-color: black;
+    border-radius: 0.8rem;
 }
 
 .row {
@@ -30,17 +48,43 @@ h1, h2, h3, h4, h5, h6 {
 .pixel {
     border-style: solid;    
     border-width: 1px;
-    width: 2rem;
-    height: 2rem;
+    width: 2.2rem;
+    height: 2.2rem;
 }
+
+
 
 .controls {
     display: flex;
     flex-direction: column;
     flex: 0 1 auto;
+    align-self: center;
+}
+
+.themes {
+    display: flex;
+    flex-direction: column;
 }
 
 .controls button {
     margin-bottom: 0.2rem;
 }
 
+button {
+    background-color: #A08983;
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    transition-duration: 0.4s;
+    font-family: monospace;
+}
+
+button:hover {
+    background-color: #347736;
+}
