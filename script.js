@@ -1,6 +1,11 @@
 const canvas = document.querySelector('.canvas');
 const buttons = document.querySelectorAll('button');
-const pixelTheme = "red";
+
+let canvasSize = {'rows': 16, 'columns': 16};
+
+const pixelTheme = 'purple';
+
+const hslThemeSet = {'rainbow' : {'minH': 0, 'maxH': 360, 'minS': 0, 'maxS': 100, 'minL': 0, 'maxL' : 100}, 'purple': {'minH': 270, 'maxH': 320, 'minS': 0, 'maxS': 100, 'minL': 0, 'maxL' : 100}, };
 
 const populateCanvas = (rows, columns) => {
     // make rows for pixels to be in
@@ -22,21 +27,24 @@ const populateCanvas = (rows, columns) => {
 }
 
 const colorPixel = (e) => {
-    e.target.setAttribute("style", `background-color : ${rgbGenerator()}`);
+    e.target.setAttribute("style", `background-color : ${HslGenerator(hslThemeSet[pixelTheme])}`);
 }
 
 const changePixelTheme = (e) => {
     pixelTheme = e.currentTarget.id
 }
 
-const getRandInt = (max) => {
-    return Math.floor(Math.random() * max); 
-}
+// min inclusive, max non-inclusive
+const getRandInt = (min, max) => {
+    return Math.floor(Math.random() * (max - min) + min);
+  }
+  
+const HslGenerator = (hslLim) => {
+    return `hsl(${getRandInt(hslLim.minH, hslLim.maxH)}, ${getRandInt(hslLim.minS, hslLim.maxS)}%, ${getRandInt(hslLim.minL, hslLim.maxL)}%)`
 
-const rgbGenerator = (limitR ='256', limitG='256', limitB='256') => {
-    return `rgb(${getRandInt(limitR)},${getRandInt(limitG)},${getRandInt(limitB)})`
+//    return `rgb(${getRandInt(RGBlim.minR, RGBlim.maxR)},${getRandInt(RGBlim.minG, RGBlim.maxG)},${getRandInt(RGBlim.minB, RGBlim.maxB)})`
 }
 
 buttons.forEach(button => button.addEventListener("click", changePixelTheme, false))
         
-populateCanvas(16,16);
+populateCanvas(canvasSize.rows, canvasSize.columns);
