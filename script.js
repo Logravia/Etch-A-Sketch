@@ -3,9 +3,17 @@ const buttons = document.querySelectorAll('button');
 
 let canvasSize = {'rows': 16, 'columns': 16};
 
-const pixelTheme = 'purple';
+const pixelTheme = 'autumn';
 
-const hslThemeSet = {'rainbow' : {'minH': 0, 'maxH': 360, 'minS': 0, 'maxS': 100, 'minL': 0, 'maxL' : 100}, 'purple': {'minH': 270, 'maxH': 320, 'minS': 0, 'maxS': 100, 'minL': 0, 'maxL' : 100}, };
+const hslThemeSet = {
+                    'rainbow' : {'minH': 0, 'maxH': 360, 'minS': 0, 'maxS': 100, 'minL': 0, 'maxL' : 100}, 
+                    'purple': {'minH': 270, 'maxH': 310, 'minS': 20, 'maxS': 90, 'minL': 30, 'maxL' : 55}, 
+                    'volcano': {'minH': 345, 'maxH': 360, 'minS': 70, 'maxS': 90, 'minL': 15, 'maxL' : 50},
+                    'winter': {'minH': 190, 'maxH': 230, 'minS': 50, 'maxS': 90, 'minL': 40, 'maxL' : 100},
+                    'spring': {'minH': 100, 'maxH': 130, 'minS': 65, 'maxS': 95, 'minL': 40, 'maxL' : 85},
+                    'summer': {'minH': 85, 'maxH': 130, 'minS': 85, 'maxS': 100, 'minL': 15, 'maxL' : 40},
+                    'autumn': {'minH': 20, 'maxH': 100, 'minS': 85, 'maxS': 100, 'minL': 10, 'maxL' : 35},
+                 };
 
 const populateCanvas = (rows, columns) => {
     // make rows for pixels to be in
