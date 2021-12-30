@@ -3,10 +3,10 @@ const buttons = document.querySelectorAll('button');
 
 let canvasSize = {'rows': 16, 'columns': 16};
 
-const pixelTheme = 'autumn';
+let pixelTheme = 'autumn';
 
 const hslThemeSet = {
-                    'rainbow' : {'minH': 0, 'maxH': 360, 'minS': 0, 'maxS': 100, 'minL': 0, 'maxL' : 100}, 
+                    'rainbow' : {'minH': 0, 'maxH': 360, 'minS': 50, 'maxS': 100, 'minL': 30, 'maxL' : 90}, 
                     'purple': {'minH': 270, 'maxH': 310, 'minS': 20, 'maxS': 90, 'minL': 30, 'maxL' : 55}, 
                     'volcano': {'minH': 345, 'maxH': 360, 'minS': 70, 'maxS': 90, 'minL': 15, 'maxL' : 50},
                     'winter': {'minH': 190, 'maxH': 230, 'minS': 50, 'maxS': 90, 'minL': 40, 'maxL' : 100},
