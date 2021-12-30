@@ -1,8 +1,7 @@
 const canvas = document.querySelector('.canvas');
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('.theme-btn');
 
 let canvasSize = {'rows': 16, 'columns': 16};
-
 let pixelTheme = 'autumn';
 
 const hslThemeSet = {
@@ -38,6 +37,7 @@ const colorPixel = (e) => {
     e.target.setAttribute("style", `background-color : ${HslGenerator(hslThemeSet[pixelTheme])}`);
 }
 
+// changes pixel theme based on the clicked button
 const changePixelTheme = (e) => {
     pixelTheme = e.currentTarget.id
 }
@@ -49,10 +49,16 @@ const getRandInt = (min, max) => {
   
 const HslGenerator = (hslLim) => {
     return `hsl(${getRandInt(hslLim.minH, hslLim.maxH)}, ${getRandInt(hslLim.minS, hslLim.maxS)}%, ${getRandInt(hslLim.minL, hslLim.maxL)}%)`
-
-//    return `rgb(${getRandInt(RGBlim.minR, RGBlim.maxR)},${getRandInt(RGBlim.minG, RGBlim.maxG)},${getRandInt(RGBlim.minB, RGBlim.maxB)})`
 }
 
-buttons.forEach(button => button.addEventListener("click", changePixelTheme, false))
-        
+const clearCanvas = () => {
+    pixels.forEach(pixel => pixel.setAttribute('style', 'background-color: '))
+}
+
+buttons.forEach(button => button.addEventListener('click', changePixelTheme, false));
+
+document.querySelector('#clear').addEventListener('click', clearCanvas);
+
+
 populateCanvas(canvasSize.rows, canvasSize.columns);
+const pixels = document.querySelectorAll('.pixel');
